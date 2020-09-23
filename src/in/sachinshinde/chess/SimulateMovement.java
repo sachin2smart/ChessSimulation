@@ -28,7 +28,7 @@ public class SimulateMovement {
 		List<String> possibleMoves = SimulateMoves.getSimulatedMoves(piece, position);
 		System.out.println("Possible Moves are:");
 		possibleMoves.stream()
-			.forEach(k -> {System.out.print(" "+k);});
+			.forEach(k -> {System.out.print(k+" ");});
 	}
 
 	

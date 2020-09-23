@@ -63,6 +63,8 @@ public class Pieces implements Moves{
 		List<Direction> queenMoves = new ArrayList<>();
 		queenMoves.add(Direction.DU);
 		queenMoves.add(Direction.UU);
+		queenMoves.add(Direction.LU);
+		queenMoves.add(Direction.RU);
 		queenMoves.add(Direction.DG);
 		return queenMoves;
 	}
