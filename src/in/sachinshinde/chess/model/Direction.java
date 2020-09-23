@@ -9,9 +9,9 @@ public enum Direction {
 	D1("Down", "One"),	//	Down by 1
 	L1("Left", "One"),	//	Left by 1
 	R1("Right", "One"),	//	Right by 1
-	DG("Diagonal", "Any"),
-	DG1("Diagonal", "One"),
-	TH("Two", "Half");	//	Diagonal 
+	DG("Diagonal", "Any"), // Diagonal at any direction
+	DG1("Diagonal", "One"), // Diagonal at any direction by 1
+	TH("Two", "Half");	//	Two and half 
 	
 	private final String movement;
 	private final String projection;
