@@ -18,7 +18,7 @@ public class Pieces implements Moves{
 		validPieces.add(Bishop);
 		validPieces.add(Horse);
 		validPieces.add(Rook);
-		validPieces.add(Pawn);
+		validPieces.add(King);
 		return validPieces;
 	}
 	
