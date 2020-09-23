@@ -55,6 +55,7 @@ public class Pieces implements Moves{
 		kingMoves.add(Direction.U1);
 		kingMoves.add(Direction.L1);
 		kingMoves.add(Direction.R1);
+		kingMoves.add(Direction.DG1);
 		return kingMoves;
 	}
 	
@@ -88,6 +89,8 @@ public class Pieces implements Moves{
 		List<Direction> rookMoves = new ArrayList<>();
 		rookMoves.add(Direction.DU);
 		rookMoves.add(Direction.UU);
+		rookMoves.add(Direction.LU);
+		rookMoves.add(Direction.RU);
 		return rookMoves;
 	}
 	
@@ -95,7 +98,7 @@ public class Pieces implements Moves{
 	public List<Direction> PawnMoves() {
 		List<Direction> pawnMoves = new ArrayList<>();
 		pawnMoves.add(Direction.U1);
-		pawnMoves.add(Direction.U1);
+		pawnMoves.add(Direction.D1);
 		return pawnMoves;
 	}
 	

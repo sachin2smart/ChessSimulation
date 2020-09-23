@@ -3,6 +3,8 @@ package in.sachinshinde.chess.simulation;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.sachinshinde.chess.Rules.DG1Rules;
+import in.sachinshinde.chess.Rules.DGRules;
 import in.sachinshinde.chess.Rules.DRules;
 import in.sachinshinde.chess.Rules.LRules;
 import in.sachinshinde.chess.Rules.RRules;
@@ -18,9 +20,14 @@ public class SimulateMoves {
 		DRules dRules = new DRules();
 		LRules lRules = new LRules();
 		RRules rRules = new RRules();
+		DGRules dgRules = new DGRules();
+		DG1Rules dg1Rules = new DG1Rules();
+		
 		List<String> moves = new ArrayList<String>();
 		List<Direction> directionList = pieces.getMoves(piece);
+		
 //		directionList.forEach(System.out::println);
+		
 		if(directionList.contains(Direction.UU)) 
 			moves.addAll(uRules.getUUmoves(position));
 		if(directionList.contains(Direction.U1)) 
@@ -40,6 +47,12 @@ public class SimulateMoves {
 			moves.addAll(rRules.getRUmoves(position));
 		if(directionList.contains(Direction.R1)) 
 			moves.addAll(rRules.getR1moves(position));
+		
+		if(directionList.contains(Direction.DG)) 
+			moves.addAll(dgRules.getDGmoves(position));
+		
+		if(directionList.contains(Direction.DG1)) 
+			moves.addAll(dg1Rules.getDG1moves(position));
 		
 		return moves;
 	}
