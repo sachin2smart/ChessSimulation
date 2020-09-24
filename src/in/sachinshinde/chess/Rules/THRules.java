@@ -3,20 +3,22 @@ package in.sachinshinde.chess.Rules;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.sachinshinde.chess.model.Chess;
+
 public class THRules {
 
 	// Two and Half moves
 	public List<String> getTHmoves(String position){
 		List<String> thMoves = new ArrayList<String>();
-		char memberVar = position.charAt(0);
-		int pointerVar = Integer.parseInt(String.valueOf(position.charAt(1)));
+		char memberVar = position.charAt(0); //G
+		int pointerVar = Integer.parseInt(String.valueOf(position.charAt(1))); //4
 		
 		// 2.5 Right moves
 		char memberRight = (char) (memberVar+2);
-		if(memberRight<='H') {
+		if(memberRight<=Chess.position) {
 			int pointerUp = pointerVar+1;
 			int pointerDown = pointerVar-1;
-			if(pointerUp<=8)
+			if(pointerUp<=Chess.pointer)
 				thMoves.add(String.valueOf(memberRight) + String.valueOf(pointerUp));
 			if(pointerDown>=1)
 				thMoves.add(String.valueOf(memberRight) + String.valueOf(pointerDown));
@@ -27,7 +29,7 @@ public class THRules {
 		if(memberLeft>='A') {
 			int pointerUp = pointerVar+1;
 			int pointerDown = pointerVar-1;
-			if(pointerUp<=8)
+			if(pointerUp<=Chess.pointer)
 				thMoves.add(String.valueOf(memberLeft) + String.valueOf(pointerUp));
 			if(pointerDown>=1)
 				thMoves.add(String.valueOf(memberLeft) + String.valueOf(pointerDown));
@@ -35,12 +37,12 @@ public class THRules {
 		
 		// 2.5 Up moves
 		int pointerUp = pointerVar+2;
-		if(pointerUp<=8) {
+		if(pointerUp<=Chess.pointer) {
 			memberLeft = (char) (memberVar-1);
 			memberRight = (char) (memberVar+1);
 			if(memberLeft>='A')
 				thMoves.add(String.valueOf(memberLeft) + String.valueOf(pointerUp));
-			if(memberRight<='H')
+			if(memberRight<=Chess.position)
 				thMoves.add(String.valueOf(memberRight) + String.valueOf(pointerUp));
 		}
 		
@@ -51,7 +53,7 @@ public class THRules {
 			memberRight = (char) (memberVar+1);
 			if(memberLeft>='A')
 				thMoves.add(String.valueOf(memberLeft) + String.valueOf(pointerDown));
-			if(memberRight<='H')
+			if(memberRight<=Chess.position)
 				thMoves.add(String.valueOf(memberRight) + String.valueOf(pointerDown));
 		}
 		

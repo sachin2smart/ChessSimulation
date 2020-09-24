@@ -3,6 +3,8 @@ package in.sachinshinde.chess.Rules;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.sachinshinde.chess.model.Chess;
+
 public class DG1Rules {
 
 	// Diagonal Unlimited moves
@@ -14,25 +16,25 @@ public class DG1Rules {
 		// both increasing
 		int pointer = pointerVar+1;
 		char member = (char) (memberVar+1); ; 
-		if(pointer<=8 && member<='H')
+		if(pointer<=Chess.pointer && member<=Chess.position)
 			dgMoves.add(String.valueOf(member) + String.valueOf(pointer));
 
 		// both decreasing
 		pointer = pointerVar-1;
-		member = (char) (memberVar-1); ; 
+		member = (char) (memberVar-1);
 		if(pointer>=1 && member>='A')
 			dgMoves.add(String.valueOf(member) + String.valueOf(pointer));
 		
 		// char increasing, num decreasing
 		pointer = pointerVar-1;
-		member = (char) (memberVar+1); ; 
-		if(pointer>=1 && member<='H')
+		member = (char) (memberVar+1);
+		if(pointer>=1 && member<=Chess.position)
 			dgMoves.add(String.valueOf(member) + String.valueOf(pointer));
 		
 		// char decreasing, num increasing
 		pointer = pointerVar+1;
 		member = (char) (memberVar-1); ; 
-		if(pointer<=8 && member>='A')
+		if(pointer<=Chess.pointer && member>='A')
 			dgMoves.add(String.valueOf(member) + String.valueOf(pointer));
 		
 		return dgMoves;

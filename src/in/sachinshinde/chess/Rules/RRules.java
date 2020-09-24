@@ -3,6 +3,8 @@ package in.sachinshinde.chess.Rules;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.sachinshinde.chess.model.Chess;
+
 // Right Rules
 public class RRules {
 	
@@ -11,7 +13,7 @@ public class RRules {
 		List<String> rMoves = new ArrayList<String>();
 		char member = position.charAt(0);
 		int pointer = Integer.parseInt(String.valueOf(position.charAt(1)));
-		for(member = (char) (member+1); member<='H'; member++) {
+		for(member = (char) (member+1); member<=Chess.position; member++) {
 			rMoves.add(String.valueOf(member) + String.valueOf(pointer));
 		}
 		return rMoves;
@@ -23,7 +25,7 @@ public class RRules {
 		char member = position.charAt(0);
 		int pointer = Integer.parseInt(String.valueOf(position.charAt(1)));
 		member = (char) (member+1); 
-		if(member<='H')
+		if(member<=Chess.position)
 			rMoves.add(String.valueOf(member) + String.valueOf(pointer));
 		return rMoves;
 	}

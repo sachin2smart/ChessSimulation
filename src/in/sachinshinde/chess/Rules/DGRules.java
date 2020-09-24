@@ -3,6 +3,8 @@ package in.sachinshinde.chess.Rules;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.sachinshinde.chess.model.Chess;
+
 // Diagonal Rules
 public class DGRules {
 
@@ -13,9 +15,9 @@ public class DGRules {
 		int pointerVar = Integer.parseInt(String.valueOf(position.charAt(1)));
 		
 		// both increasing
-		for(int pointer = pointerVar+1; pointer<=8; pointer++) {
-			for(char member = (char) (memberVar+1); member<='H'; member++) {
-				if(pointer<=8)
+		for(int pointer = pointerVar+1; pointer<=Chess.pointer; pointer++) {
+			for(char member = (char) (memberVar+1); member<=Chess.position; member++) {
+				if(pointer<=Chess.pointer)
 					dgMoves.add(String.valueOf(member) + String.valueOf(pointer));
 				pointer++;
 			}
@@ -30,16 +32,16 @@ public class DGRules {
 		}
 		// char increasing, num decreasing
 		for(int pointer = pointerVar-1; pointer>=1; pointer--) {
-			for(char member = (char) (memberVar+1); member<='H'; member++) {
+			for(char member = (char) (memberVar+1); member<=Chess.position; member++) {
 				if(pointer>=1)
 					dgMoves.add(String.valueOf(member) + String.valueOf(pointer));
 				pointer--;
 			}
 		}
 		// char decreasing, num increasing
-		for(int pointer = pointerVar+1; pointer<=8; pointer++) {
+		for(int pointer = pointerVar+1; pointer<=Chess.pointer; pointer++) {
 			for(char member = (char) (memberVar-1); member>='A'; member--) {
-				if(pointer<=8)
+				if(pointer<=Chess.pointer)
 					dgMoves.add(String.valueOf(member) + String.valueOf(pointer));
 				pointer++;
 			}
