@@ -8,6 +8,7 @@ import in.sachinshinde.chess.Rules.DGRules;
 import in.sachinshinde.chess.Rules.DRules;
 import in.sachinshinde.chess.Rules.LRules;
 import in.sachinshinde.chess.Rules.RRules;
+import in.sachinshinde.chess.Rules.THRules;
 import in.sachinshinde.chess.Rules.URules;
 import in.sachinshinde.chess.model.Direction;
 import in.sachinshinde.chess.model.Pieces;
@@ -22,6 +23,7 @@ public class SimulateMoves {
 		RRules rRules = new RRules();
 		DGRules dgRules = new DGRules();
 		DG1Rules dg1Rules = new DG1Rules();
+		THRules thRules = new THRules();
 		
 		List<String> moves = new ArrayList<String>();
 		List<Direction> directionList = pieces.getMoves(piece);
@@ -53,6 +55,9 @@ public class SimulateMoves {
 		
 		if(directionList.contains(Direction.DG1)) 
 			moves.addAll(dg1Rules.getDG1moves(position));
+		
+		if(directionList.contains(Direction.TH)) 
+			moves.addAll(thRules.getTHmoves(position));
 		
 		return moves;
 	}
