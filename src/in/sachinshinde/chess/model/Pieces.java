@@ -94,6 +94,7 @@ public class Pieces implements Moves{
 		return rookMoves;
 	}
 	
+	// TODO : Decide opponent moves
 	@Override
 	public List<Direction> PawnMoves() {
 		List<Direction> pawnMoves = new ArrayList<>();
